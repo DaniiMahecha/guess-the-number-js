@@ -10,9 +10,9 @@ let upperLimit = 10; //10 sorteos máximos
     function attemptVerify(){
         let userNumber = parseInt(document.getElementById('userType').value);
 
-        if(attempts >= upperLimit * 0.4){
+        if(attempts > upperLimit * 0.4){
 
-        setText('p','You have reached the attempt limit')
+        setText('p','You have reached the attempt limit, TRY AGAIN')
         document.getElementById('jugar').setAttribute('disabled','true'); //Desahilito la opción de Jugar 
         resetInputValue();
         setOwnAttribute('reiniciar', 'disabled');
@@ -22,7 +22,7 @@ let upperLimit = 10; //10 sorteos máximos
         //Si los números coinciden, mensaje de victoria
           if(userNumber === secretNumber){
 
-          setText('p', `You match the Secret Number in ${attempts} ${attempts > 1 ? 'attemps' : 'attempt' }`);
+          setText('p', `You match the Secret Number in ${attempts} ${attempts > 1 ? 'attemps' : 'attempt'}, CONGATULATIONS!!`);
           document.getElementById('jugar').setAttribute('disabled','true'); //Desahilito la opción de Jugar
 
           //Si el usuario gana, se habilita la opción de empezar un nuevo juego
@@ -69,7 +69,7 @@ let upperLimit = 10; //10 sorteos máximos
       
           if(secretNumberList.length == upperLimit){
 
-          setText('p','Game over, you match all the secret numbers availables')
+          setText('p','Game over, you match all the secret numbers availables, CONGRATULATIONS!!')
           document.getElementById('jugar').setAttribute('disabled','true');//Desahilito la opción de Jugar
 
           
@@ -112,6 +112,7 @@ let upperLimit = 10; //10 sorteos máximos
 
 
 initialConditions();
+
 
 
 
